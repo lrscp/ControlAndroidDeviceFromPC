@@ -9,4 +9,4 @@ This project is based on android's DDMS code. I just modify some of the code to 
 
 Contact me
 ----------
-*lrscp(675486378@qq.com)
+* lrscp(675486378@qq.com)
