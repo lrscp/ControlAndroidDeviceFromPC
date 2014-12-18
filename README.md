@@ -24,7 +24,7 @@ __3.__ click batch file **run.bat** in the directory **out**. The program should
 Supported Operations
 --------------------
 - Touch, Slide
-> Move your mouse upon the screen capture, and press your left mouse button and drag or just a click on an icon.
+> Move your mouse upon the screen capture, and press your left mouse button and drag or just a simple click on an icon.
 
 - Keys
 > Menu --> 'M' on the keyboard
@@ -33,7 +33,7 @@ Supported Operations
 > 
 > Home --> 'H' on the keyboard
 
-*You can modify the code to implement your desired operations.*
+*you can modify the code to implement your desired functions.*
 
 Contact me
 ----------
