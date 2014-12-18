@@ -63,7 +63,7 @@ public class WelcomDialog extends Dialog {
         GridData gd_lblLoading = new GridData(SWT.CENTER, SWT.CENTER, false, false, 1, 1);
         gd_lblLoading.verticalIndent = 10;
         lblLoading.setLayoutData(gd_lblLoading);
-        lblLoading.setText("Loading...");
+        lblLoading.setText("Connecting andorid device...");
 
         shlLoading.pack();
         SwtUtils.center(shlLoading, 10);

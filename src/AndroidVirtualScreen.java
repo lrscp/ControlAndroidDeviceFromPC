@@ -1,3 +1,7 @@
+import lrscp.lib.CmdUtils.Service.OsCmd;
+import lrscp.lib.swt.SwtUtils;
+
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -9,14 +13,29 @@ import com.android.ddmuilib.ScreenShotDialog;
 import com.android.ddmuilib.ScreenShotDialog.OnShowListener;
 
 public class AndroidVirtualScreen {
-    static ScreenShotDialog dialog;
-    
-    private static WelcomDialog welcomeDialog;
+    private static ScreenShotDialog mScreenShotDialog;
+
+    private static WelcomDialog mWelcomeDialog;
 
     public static void main(String[] args) {
-        welcomeDialog = new WelcomDialog(new Shell(), SWT.DIALOG_TRIM);
+        if (!checkAdb()) {
+            Shell shell = new Shell();
+            SwtUtils.center(shell, 10);
+            MessageDialog.openError(shell, "Error", "Adb is not installed in your system!");
+            return;
+        }
+        mWelcomeDialog = new WelcomDialog(new Shell(), SWT.DIALOG_TRIM);
         startScreenShotDialog();
-        welcomeDialog.open();
+        mWelcomeDialog.open();
+    }
+
+    private static boolean checkAdb() {
+        try {
+            OsCmd.exec("adb");
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     private static void startScreenShotDialog() {
@@ -28,8 +47,8 @@ public class AndroidVirtualScreen {
                 Display.getDefault().syncExec(new Runnable() {
                     @Override
                     public void run() {
-                        if (dialog != null && !dialog.mShell.isDisposed()) {
-                            dialog.mShell.dispose();
+                        if (mScreenShotDialog != null && !mScreenShotDialog.mShell.isDisposed()) {
+                            mScreenShotDialog.mShell.dispose();
                         }
                         System.exit(0);
                     }
@@ -44,18 +63,18 @@ public class AndroidVirtualScreen {
                         Display.getDefault().asyncExec(new Runnable() {
                             @Override
                             public void run() {
-                                if (dialog == null) {
-                                    dialog = new ScreenShotDialog(new Shell(Display.getDefault(), SWT.SHELL_TRIM));
-                                    dialog.setOnShowListener(new OnShowListener() {
+                                if (mScreenShotDialog == null) {
+                                    mScreenShotDialog = new ScreenShotDialog(new Shell(Display.getDefault(), SWT.SHELL_TRIM));
+                                    mScreenShotDialog.setOnShowListener(new OnShowListener() {
                                         @Override
                                         public void onShow() {
-                                            if(welcomeDialog != null){
-                                                welcomeDialog.getParent().dispose();
+                                            if (mWelcomeDialog != null) {
+                                                mWelcomeDialog.getParent().dispose();
                                             }
                                         }
                                     });
-                                    dialog.open(device);
-                                    //AndroidDebugBridge.disconnectBridge();
+                                    mScreenShotDialog.open(device);
+                                    // AndroidDebugBridge.disconnectBridge();
                                     System.exit(0);
                                 }
                             }
