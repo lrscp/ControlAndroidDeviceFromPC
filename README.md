@@ -27,15 +27,15 @@ Supported Operations
 --------------------
 - Touch, Slide
 
-		Move your mouse upon the screen capture, and press your left mouse button and drag or just a simple click on an icon.
+	Move your mouse upon the screen capture, and press your left mouse button and drag or just a simple click on an icon.
 
 - Keys
 
-		Menu --> 'M' on the keyboard
+	Menu --> 'M' on the keyboard
     
-    	Back --> 'B' on the keyboard
+    Back --> 'B' on the keyboard
     
-    	Home --> 'H' on the keyboard
+    Home --> 'H' on the keyboard
 
 *you can modify the code to implement your desired functions.*
 
