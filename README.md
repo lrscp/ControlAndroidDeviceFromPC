@@ -19,22 +19,23 @@ Usage
 
 __1.__ Make sure **adb** is installed in your system and can be called from command prompt.
 
-__2.__ Connect your android device to the computer.
-* input command `adb devices` to check whether your device is connected.
+__2.__ Connect your android device to the computer.Input command `adb devices` to check whether your device is connected.
 
 __3.__ click batch file **run.bat** in the directory **out**. The program should be running normally now.
 
 Supported Operations
 --------------------
 - Touch, Slide
-> Move your mouse upon the screen capture, and press your left mouse button and drag or just a simple click on an icon.
+
+		Move your mouse upon the screen capture, and press your left mouse button and drag or just a simple click on an icon.
 
 - Keys
-> Menu --> 'M' on the keyboard
-> 
-> Back --> 'B' on the keyboard
-> 
-> Home --> 'H' on the keyboard
+
+		Menu --> 'M' on the keyboard
+    
+    	Back --> 'B' on the keyboard
+    
+    	Home --> 'H' on the keyboard
 
 *you can modify the code to implement your desired functions.*
 
