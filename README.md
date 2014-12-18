@@ -14,9 +14,10 @@ Usage
 __1.__ Make sure **adb** is installed in your system and can be called from command prompt.
 
 __2.__ Connect your android device to the computer.
-* input command `adb devices` to ensure your device is connected.
+* input command `adb devices` to check whether your device is connected.
 
-__3.__ click batch file **run.bat** in the directory **out**. The program should be running normally now.
+__3.__ click batch file **run.bat** in the directory **out**. The program should be running normally now.As the following picture shows:
+[](https://raw.githubusercontent.com/lrscp/ControlAndroidDeviceFromPC/master/pic/p1.jpg)
 
 
 Supported Operations
